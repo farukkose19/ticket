@@ -1,5 +1,7 @@
 package com.faruk.ticketapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -24,6 +26,7 @@ public class User {
     private String email;
     private String phone;
 
+    @JsonIgnore
     @OneToMany(mappedBy="user")
     private List<Ticket> ticketList;
 

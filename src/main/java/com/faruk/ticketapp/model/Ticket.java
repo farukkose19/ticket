@@ -22,6 +22,8 @@ public class Ticket {
     @ManyToOne
     private Flight flight;
 
+    private boolean status = true;
+
     public Long getId() {
         return id;
     }
@@ -60,5 +62,13 @@ public class Ticket {
 
     public void setTicketNumber(String ticketNumber) {
         this.ticketNumber = ticketNumber;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

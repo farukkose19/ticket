@@ -1,7 +1,6 @@
 package com.faruk.ticketapp.model;
 
-import net.minidev.json.annotate.JsonIgnore;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,8 +12,8 @@ public class Airline {
     private Long id;
     private String name;
 
-    @JsonIgnore
     @OneToMany(mappedBy="airline")
+    @JsonIgnore
     private List<Flight> flights;
 
     public Long getId() {

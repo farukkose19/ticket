@@ -1,5 +1,9 @@
 package com.faruk.ticketapp.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -17,7 +21,7 @@ public class Flight {
     private Date date;
     private String airplane;
     private int seatNumbers;
-    private int soldSeatNumber;
+    private int soldSeatNumber = 0;
     private double firstPrice;
 
     @ManyToOne
@@ -97,4 +101,5 @@ public class Flight {
     public void setFlightCode(String flightCode) {
         this.flightCode = flightCode;
     }
+
 }

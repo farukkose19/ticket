@@ -1,7 +1,7 @@
 package com.faruk.ticketapp.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -17,6 +17,7 @@ public class Route {
     private Airport arrival;
 
     @OneToMany(mappedBy="route")
+    @JsonIgnore
     private List<Flight> flights;
 
     public Long getId() {
